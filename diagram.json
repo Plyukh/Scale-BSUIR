@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "author": "Tuge Bokka",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 44.8,
+      "left": 312.8,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-hx711",
+      "id": "cell2",
+      "top": -122.2,
+      "left": 156.2,
+      "attrs": { "type": "50kg" }
+    }
+  ],
+  "connections": [
+    [ "lcd1:GND", "uno:GND.2", "black", [ "h-38.4", "v134.4", "h-115.2" ] ],
+    [ "lcd1:VCC", "uno:5V", "red", [ "h-28.8", "v134.5", "h-115.2" ] ],
+    [ "lcd1:SDA", "uno:A4", "green", [ "h-19.2", "v134.6", "h-48" ] ],
+    [ "lcd1:SCL", "uno:A5", "green", [ "h-9.6", "v134.7", "h-48" ] ],
+    [ "cell2:VCC", "uno:5V", "red", [ "h-163.2", "v307.2", "h172.8" ] ],
+    [ "cell2:GND", "uno:GND.1", "black", [ "h0" ] ],
+    [ "cell2:DT", "uno:2", "green", [ "h-28.8", "v76.3", "h105.6" ] ],
+    [ "cell2:SCK", "uno:3", "green", [ "h-19.2", "v47.2", "h76.8" ] ]
+  ],
+  "dependencies": {}
+}
